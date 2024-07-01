@@ -21,7 +21,7 @@ dbConnect();
 
 // Middleware
 const corsOptions = {
-  origin: 'https://selectmaid.netlify.app/', // Replace with your actual Netlify domain
+  origin: '*', // Replace with your actual Netlify domain
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };

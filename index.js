@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 const cors = require("cors");
 const dbConnect = require("./database/dbConfig");
 const heroRouter = require("./routes/heroRoutes");
@@ -20,7 +20,10 @@ const app = express();
 dbConnect();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://your-frontend-domain.com'],
+  credentials: true, // if you need to include cookies in the requests
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

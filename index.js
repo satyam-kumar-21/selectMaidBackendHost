@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // CORS Configuration
 const corsOptions = {
-  origin: '*', // You can specify a specific origin instead of '*' for better security
+  origin: 'https://selectmaid.netlify.app/', // You can specify a specific origin instead of '*' for better security
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };

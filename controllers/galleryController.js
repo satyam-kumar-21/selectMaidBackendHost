@@ -20,6 +20,8 @@ const createGallery = async (req, res) => {
         const newGallery = await Gallery.create({ description, image });
         res.status(201).json(newGallery);
     } catch (error) {
+        console.log('next error',error);
+
         res.status(400).json({ message: error.message });
     }
 };

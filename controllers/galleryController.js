@@ -5,19 +5,19 @@ const createGallery = async (req, res) => {
     try {
         // Upload file to Cloudinary if there's an image
         let image;
-        if (req.file) {
-            const result = await cloudinary.uploader.upload(req.file.path, {
-                folder: "gallery-images", // Folder in Cloudinary to store images
-                width: 800, // Resize width to 800px
-                height: 600, // Resize height to 600px
-                crop: "fill", // Crop mode
-            });
-            image = result.secure_url; // Store the Cloudinary URL
-        }
+        // if (req.file) {
+        //     const result = await cloudinary.uploader.upload(req.file.path, {
+        //         folder: "gallery-images", // Folder in Cloudinary to store images
+        //         width: 800, // Resize width to 800px
+        //         height: 600, // Resize height to 600px
+        //         crop: "fill", // Crop mode
+        //     });
+        //     image = result.secure_url; // Store the Cloudinary URL
+        // }
 
         const { description } = req.body;
 
-        const newGallery = await Gallery.create({ description, image });
+        const newGallery = await Gallery.create({ description, image:'myImageName' });
         res.status(201).json(newGallery);
     } catch (error) {
         console.log('next error',error);

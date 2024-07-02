@@ -13,14 +13,26 @@ cloudinary.config({
 // Allowed file extensions
 const allowedImageExtensions = [".jpg", ".jpeg", ".webp", ".png", ".jfif"];
 const allowedVideoExtensions = [".mp4", ".webm", ".ogg"];
+const allowedExtensions = allowedImageExtensions.concat(allowedVideoExtensions).map(ext => ext.slice(1)); // Remove the dot
 
 // Multer configuration
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
-  params: {
-    folder: 'uploads', // Folder name on Cloudinary (optional)
-    allowed_formats: allowedImageExtensions.concat(allowedVideoExtensions),
-    resource_type: 'auto' // Set the resource type (auto, image, video, raw)
+  params: (req, file) => {
+    const ext = path.extname(file.originalname).toLowerCase().slice(1); // Remove the dot
+    let resourceType = "auto";
+    
+    if (allowedImageExtensions.includes(`.${ext}`)) {
+      resourceType = "image";
+    } else if (allowedVideoExtensions.includes(`.${ext}`)) {
+      resourceType = "video";
+    }
+
+    return {
+      folder: 'uploads', // Folder name on Cloudinary (optional)
+      format: ext, // Use the extension as format
+      resource_type: resourceType // Set the resource type (auto, image, video, raw)
+    };
   },
 });
 

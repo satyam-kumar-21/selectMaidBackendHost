@@ -59,6 +59,10 @@ const admin = {
   password: 'selectmaid@123'
 };
 
+app.get("/",(req,res) =>{
+  res.send("hello duniya")
+})
+
 app.post('/admin/login', (req, res) => {
   const { username, password } = req.body;
 

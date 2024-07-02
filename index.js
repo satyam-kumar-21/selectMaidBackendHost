@@ -19,19 +19,21 @@ const app = express();
 
 dbConnect();
 
-// Middleware
-app.use(express.json());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: ['https://selectmaid.netlify.app'], // Ensure this matches your frontend's origin
+  origin: 'https://selectmaid.netlify.app', // Ensure this matches your frontend's origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
 // Apply CORS middleware
 app.use(cors(corsOptions));
+
+// Middleware
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 // Cloudinary setup
 const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;

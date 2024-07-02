@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors'); // Import cors middleware
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const cloudinary = require("cloudinary").v2;
@@ -20,13 +20,13 @@ const app = express();
 dbConnect();
 
 // Middleware
-app.use(express.json())
+app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Allow requests from any origin with specified methods and headers
+// CORS Configuration
 const corsOptions = {
-  origin: '*', // Replace with your production domain or specific origins for security
+  origin: '*', // You can specify a specific origin instead of '*' for better security
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
@@ -45,10 +45,6 @@ cloudinary.config({
 });
 
 // Routes
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
-
 app.use("/hero", heroRouter);
 app.use("/about", aboutRouter);
 app.use("/gallery", galleryRouter);
@@ -73,10 +69,10 @@ app.post('/admin/login', (req, res) => {
   }
 });
 
-// Handle OPTIONS requests for specific routes
-app.options('*', cors(corsOptions));
+// Handle OPTIONS requests (preflight requests)
+app.options('*', cors(corsOptions)); // Enable preflight across all routes
 
-
+// Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');

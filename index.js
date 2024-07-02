@@ -21,10 +21,7 @@ dbConnect();
 
 
 const corsOptions = {
-  origin: [
-    "https://selectmaid.netlify.app/",
-    "*"
-  ], // Ensure this matches your frontend's origin
+  origin: "https://selectmaid.netlify.app/", // Ensure this matches your frontend's origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };

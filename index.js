@@ -24,13 +24,13 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// CORS Configuration
 const corsOptions = {
-origin: ['https://selectmaid.netlify.app/'], // You can specify a specific origin instead of '*' for better security
+  origin: ['https://selectmaid.netlify.app'], // Ensure this matches your frontend's origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
+// Apply CORS middleware
 app.use(cors(corsOptions));
 
 // Cloudinary setup

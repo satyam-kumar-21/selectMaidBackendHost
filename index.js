@@ -24,29 +24,9 @@ app.use(express.json())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Allow requests from specified origins
-// const allowedOrigins = [
-//   'http://127.0.0.1:3000', // Add other origins as needed for different environments
-//   'https://selectmaid.netlify.app/*' // Add your production domain
-// ];
-
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-//   credentials: true,
-// };
-
-//app.use(cors(corsOptions)); // Use cors middleware with options
-
+// Allow requests from any origin with specified methods and headers
 const corsOptions = {
-  origin: 'https://selectmaid.netlify.app', // Replace with your Netlify frontend URL
+  origin: '*', // Replace with your production domain or specific origins for security
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
@@ -92,6 +72,9 @@ app.post('/admin/login', (req, res) => {
     res.json({ success: false });
   }
 });
+
+// Handle OPTIONS requests for specific routes
+app.options('/gallery/upload-gallery', cors(corsOptions));
 
 // Start server
 app.listen(PORT, () => {

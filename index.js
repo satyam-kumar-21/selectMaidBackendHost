@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Allow requests from specified origins
 const allowedOrigins = [
   'http://127.0.0.1:3000', // Add other origins as needed for different environments
-  'https://selectmaid.netlify.app' // Add your production domain
+  'https://selectmaid.netlify.app/*' // Add your production domain
 ];
 
 const corsOptions = {

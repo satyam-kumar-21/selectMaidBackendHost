@@ -10,7 +10,7 @@ const galleryRouter = require("./routes/galleryRoutes");
 const newUpdateRouter = require("./routes/newUpdateRoutes");
 const serviceRouter = require("./routes/serviceRoutes")
 const ratingRouter = require("./routes/ratingRoutes");
-const branchRouter = require("./routes/branchRoutes")
+const branchRouter = require("./routes/branchRoutes");
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
@@ -42,11 +42,10 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//clodinary setup 
-
-const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME
-const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY 
-const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET 
+// Cloudinary setup
+const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;
+const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
+const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
 
 cloudinary.v2.config({
   cloud_name: CLOUDINARY_CLOUD_NAME,
@@ -59,14 +58,13 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
-app.use("/hero",heroRouter);
+app.use("/hero", heroRouter);
 app.use("/about", aboutRouter);
 app.use("/gallery", galleryRouter);
-app.use("/new-update",newUpdateRouter);
+app.use("/new-update", newUpdateRouter);
 app.use("/service", serviceRouter);
 app.use("/rating", ratingRouter);
-app.use("/branch",branchRouter)
-
+app.use("/branch", branchRouter);
 
 // Predefined admin credentials
 const admin = {

@@ -6,7 +6,7 @@ const createNewUpdate = async (req, res) => {
         // Upload file to Cloudinary if there's an image
         let image;
 
-        return res.json({body:req.body})
+        
 
         if (req.file) {
             const result = await cloudinary.uploader.upload(req.file.path, {

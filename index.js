@@ -22,7 +22,7 @@ dbConnect();
 
 const corsOptions = {
   origin: "*", // Ensure this matches your frontend's origin
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', '*'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 

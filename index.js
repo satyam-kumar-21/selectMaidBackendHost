@@ -25,13 +25,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // CORS Configuration
-const corsOptions = {
-  origin: 'https://selectmaid.netlify.app/', // You can specify a specific origin instead of '*' for better security
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-};
+// const corsOptions = {
+//   origin: 'https://selectmaid.netlify.app/', // You can specify a specific origin instead of '*' for better security
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Cloudinary setup
 const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;

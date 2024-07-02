@@ -8,7 +8,7 @@ const heroRouter = require("./routes/heroRoutes");
 const aboutRouter = require("./routes/aboutRoutes");
 const galleryRouter = require("./routes/galleryRoutes");
 const newUpdateRouter = require("./routes/newUpdateRoutes");
-const serviceRouter = require("./routes/serviceRoutes")
+const serviceRouter = require("./routes/serviceRoutes");
 const ratingRouter = require("./routes/ratingRoutes");
 const branchRouter = require("./routes/branchRoutes");
 
@@ -39,7 +39,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

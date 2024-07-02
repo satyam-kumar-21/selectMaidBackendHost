@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Allow requests from localhost:3000 during development
 const allowedOrigins = [
-  'http://localhost:3000', // Add other origins as needed for different environments
+  'http://127.0.0.1:3000', // Add other origins as needed for different environments
   'https://selectmaid.netlify.app' // Add your production domain
 ];
 

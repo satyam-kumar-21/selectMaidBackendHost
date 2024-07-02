@@ -50,7 +50,7 @@ app.use((req, res, next) => {
   // res.header(`Access-Control-Allow-Origin`, `*`);
   // res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
   // res.header(`Access-Control-Allow-Headers`, `Content-Type`);
-  next();
+  // next();
 });
 
 
@@ -95,7 +95,7 @@ app.post('/admin/login', (req, res) => {
 });
 
 // Handle OPTIONS requests (preflight requests)
-app.options('*', cors(corsOptions)); // Enable preflight across all routes
+// app.options('*', cors(corsOptions)); // Enable preflight across all routes
 
 // Error handling middleware
 app.use((err, req, res, next) => {

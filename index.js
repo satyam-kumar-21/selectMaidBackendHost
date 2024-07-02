@@ -74,7 +74,7 @@ app.post('/admin/login', (req, res) => {
 });
 
 // Handle OPTIONS requests for specific routes
-app.options('/gallery/upload-gallery', cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 // Start server
 app.listen(PORT, () => {

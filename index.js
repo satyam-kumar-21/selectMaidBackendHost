@@ -20,8 +20,19 @@ const app = express();
 dbConnect();
 
 // Middleware
+const allowedOrigins = [
+  'http://localhost:3000', // Local development
+  'https://selectmaid.netlify.app' // Production
+];
+
 const corsOptions = {
-  origin: 'https://selectmaid.netlify.app', // Replace with your actual Netlify domain
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };

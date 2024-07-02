@@ -45,12 +45,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //app.use(cors(corsOptions)); // Use cors middleware with options
 
-app.use(cors({
-  origin: 'https://selectmaid.netlify.app',
+const corsOptions = {
+  origin: 'https://selectmaid.netlify.app', // Replace with your Netlify frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true, // enable passing of cookies from client to server
-}));
+};
+
+app.use(cors(corsOptions));
 
 // Cloudinary setup
 const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;

@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 const cloudinary = require("cloudinary").v2;
 const dbConnect = require("./database/dbConfig");
@@ -11,6 +12,7 @@ const newUpdateRouter = require("./routes/newUpdateRoutes");
 const serviceRouter = require("./routes/serviceRoutes");
 const ratingRouter = require("./routes/ratingRoutes");
 const branchRouter = require("./routes/branchRoutes");
+const contactRoute = require('./routes/contactRoute');
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
@@ -73,6 +75,7 @@ app.use("/new-update", newUpdateRouter);
 app.use("/service", serviceRouter);
 app.use("/rating", ratingRouter);
 app.use("/branch", branchRouter);
+app.use('/contact', contactRoute);
 
 // Predefined admin credentials
 const admin = {

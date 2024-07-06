@@ -7,7 +7,7 @@ const createBlog = async (req, res) => {
         let image;
         if (req.file) {
             const result = await cloudinary.uploader.upload(req.file.path, {
-                folder: "new-updates", // Folder in Cloudinary to store images
+                folder: "blog", // Folder in Cloudinary to store images
                 width: 800, // Resize width to 800px
                 height: 600, // Resize height to 600px
                 crop: "fill", // Crop mode

@@ -13,7 +13,7 @@ const serviceRouter = require("./routes/serviceRoutes");
 const ratingRouter = require("./routes/ratingRoutes");
 const branchRouter = require("./routes/branchRoutes");
 const contactRoute = require('./routes/contactRoute');
-const blogRouter = require('./routes/blogRoutes');
+// const blogRouter = require('./routes/blogRoutes');
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
@@ -76,7 +76,7 @@ app.use("/new-update", newUpdateRouter);
 app.use("/service", serviceRouter);
 app.use("/rating", ratingRouter);
 app.use("/branch", branchRouter);
-app.use("/blog", blogRouter);
+// app.use("/blog", blogRouter);
 app.use('/contact', contactRoute);
 
 // Predefined admin credentials

@@ -1,5 +1,3 @@
-// routes/contact.js
-
 const express = require('express');
 const contactRoute = express.Router();
 const contactController = require('../controllers/contactController');

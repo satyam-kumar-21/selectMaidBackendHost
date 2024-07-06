@@ -15,7 +15,7 @@ const submitMessage = async (req, res) => {
 
   // Create email content
   const mailOptions = {
-    from: `${email}`,
+    from: email,
     to: 'satyamkumar2716@gmail.com', // Replace with recipient's email
     subject: 'New Message from Contact Form',
     html: `<p><strong>Name:</strong> ${name}</p>

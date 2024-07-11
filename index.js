@@ -13,6 +13,9 @@ const serviceRouter = require("./routes/serviceRoutes");
 const ratingRouter = require("./routes/ratingRoutes");
 const branchRouter = require("./routes/branchRoutes");
 const contactRoute = require('./routes/contactRoute');
+const delhiMaidRouter = require('./routes/delhiMaidsRoutes');
+const noidaMaidRouter = require('./routes/noidaMaidRoutes');
+const gurugramMaidRouter = require('./routes/gurugramMaidRoutes');
 // const delhiMaidRouter = require('./routes/delhiMaidsRoutes');
 // const noidaMaidRouter = require('./routes/noidaMaidRouter');
 // const gurugramMaidRouter = require('./routes/gurugramMaidRouter');
@@ -81,9 +84,9 @@ app.use("/rating", ratingRouter);
 app.use("/branch", branchRouter);
 // app.use("/blog", blogRouter);
 app.use('/contact', contactRoute);
-// app.use("/delhi-maids", delhiMaidRouter);
-// app.use("/noida-maids",noidaMaidRouter);
-// app.use("/gurugram-maids",gurugramMaidRouter);
+app.use("/delhi-maids", delhiMaidRouter);
+app.use("/noida-maids",noidaMaidRouter);
+app.use("/gurugram-maids",gurugramMaidRouter);
 
 // Predefined admin credentials
 const admin = {

@@ -1,6 +1,6 @@
 const express = require("express");
 const upload = require("../middleware/fileUploadMulter.js");
-const { createNoidaMaid, updateNoidaMaid, deleteNoidaMaid, getAllNoidaMaids } = require("../controllers/noidaMaidController.js");
+const { createNoidaMaid, updateNoidaMaid, deleteNoidaMaid, getAllNoidaMaids } = require("../controllers/noidaMaidController");
 
 const noidaMaidRouter = express.Router();
 

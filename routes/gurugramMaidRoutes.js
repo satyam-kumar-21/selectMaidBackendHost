@@ -1,6 +1,6 @@
 const express = require("express");
 const upload = require("../middleware/fileUploadMulter.js");
-const { createGurugramMaid, updateGurugramMaid, deleteGurugramMaid, getAllGurugramMaids } = require("../controllers/gurugramMaidController.js");
+const { createGurugramMaid, updateGurugramMaid, deleteGurugramMaid, getAllGurugramMaids } = require("../controllers/gurugramMaidController");
 
 const gurugramMaidRouter = express.Router();
 

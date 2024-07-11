@@ -13,9 +13,9 @@ const serviceRouter = require("./routes/serviceRoutes");
 const ratingRouter = require("./routes/ratingRoutes");
 const branchRouter = require("./routes/branchRoutes");
 const contactRoute = require('./routes/contactRoute');
-const delhiMaidRouter = require('./routes/delhiMaidsRoutes');
-const noidaMaidRouter = require('./routes/noidaMaidRouter');
-const gurugramMaidRouter = require('./routes/gurugramMaidRouter');
+// const delhiMaidRouter = require('./routes/delhiMaidsRoutes');
+// const noidaMaidRouter = require('./routes/noidaMaidRouter');
+// const gurugramMaidRouter = require('./routes/gurugramMaidRouter');
 // const blogRouter = require('./routes/blogRoutes');
 
 dotenv.config();

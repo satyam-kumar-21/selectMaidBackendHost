@@ -1,5 +1,5 @@
 const Rating = require("../models/ratingModel");
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 
 // Create a new rating
 const createRating = async (req, res) => {

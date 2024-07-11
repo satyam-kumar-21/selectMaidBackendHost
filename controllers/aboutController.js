@@ -1,5 +1,5 @@
 const About = require("../models/aboutModel");
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 
 const createAbout = async (req, res) => {
     try {

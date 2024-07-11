@@ -1,5 +1,5 @@
 const Gallery = require("../models/galleryModel");
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 
 const createGallery = async (req, res) => {
     try {

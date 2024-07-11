@@ -1,5 +1,5 @@
 const Hero = require("../models/heroModel");
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 
 const createHero = async (req, res) => {
  

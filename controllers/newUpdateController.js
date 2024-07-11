@@ -1,5 +1,5 @@
 const NewUpdate = require("../models/newUpdateModel");
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 
 const createNewUpdate = async (req, res) => {
     try {

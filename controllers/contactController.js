@@ -1,6 +1,8 @@
 // controllers/contact.js
 
 const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
+dotenv.config();
 const EMAIL = process.env.CONTACT_EMAIL;
 const EMAIL_SECRET = process.env.EMAIL_SECRET;
 const SELECT_MAID_EMAIL = process.env.SELECT_MAID_EMAIL; // Additional recipient email

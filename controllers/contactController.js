@@ -25,6 +25,8 @@ const submitMessage = async (req, res) => {
            <p><strong>Message:</strong> ${message}</p>`,
   };
 
+  console.log(mailOptions);
+
   try {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: 'Message sent successfully' });

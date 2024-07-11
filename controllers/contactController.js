@@ -5,8 +5,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'satyamkumar2716@gmail.com', // Replace with your Gmail email
-    pass: 'Satyam@2002', // Replace with your Gmail password or app-specific password
+    user: 'satyamisha238@gmail.com', // Replace with your Gmail email
+    pass: 'Satyam@6203176139', // Replace with your Gmail password or app-specific password
   },
   logger: true, // Enable detailed logging
   debug: true,
@@ -18,7 +18,7 @@ const submitMessage = async (req, res) => {
   // Create email content
   const mailOptions = {
     from: email,
-    to: 'satyamkumar2716@gmail.com', // Replace with recipient's email
+    to: 'satyamisha238@gmail.com', // Replace with recipient's email
     subject: 'New Message from Contact Form',
     html: `<p><strong>Name:</strong> ${name}</p>
            <p><strong>Email:</strong> ${email}</p>

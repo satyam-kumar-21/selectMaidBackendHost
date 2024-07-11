@@ -1,8 +1,8 @@
-const MaidInDelhi = require("../models/delhiMaids");
+const MaidInGurugram = require("../models/maidInGurugram");
 const cloudinary = require("cloudinary").v2;
 
-// Create a new MaidInDelhi
-const createDelhiMaid = async (req, res) => {
+// Create a new MaidInGurugram
+const createGurugramMaid = async (req, res) => {
     try {
         // Upload file to Cloudinary if there's an image
         let image;
@@ -18,15 +18,15 @@ const createDelhiMaid = async (req, res) => {
 
         const { name, details } = req.body;
 
-        const newMaid = await MaidInDelhi.create({ name, details, image });
+        const newMaid = await MaidInGurugram.create({ name, details, image });
         res.status(201).json(newMaid);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
 };
 
-// Update a MaidInDelhi
-const updateDelhiMaid = async (req, res) => {
+// Update a MaidInGurugram
+const updateGurugramMaid = async (req, res) => {
     try {
         // Check if there is a file to upload
         let image;
@@ -49,8 +49,8 @@ const updateDelhiMaid = async (req, res) => {
             updateFields.image = image;
         }
 
-        // Find and update the MaidInDelhi
-        const updatedMaid = await MaidInDelhi.findByIdAndUpdate(
+        // Find and update the MaidInGurugram
+        const updatedMaid = await MaidInGurugram.findByIdAndUpdate(
             req.params.id,
             updateFields,
             { new: true }
@@ -66,10 +66,10 @@ const updateDelhiMaid = async (req, res) => {
     }
 };
 
-// Delete a MaidInDelhi
-const deleteDelhiMaid = async (req, res) => {
+// Delete a MaidInGurugram
+const deleteGurugramMaid = async (req, res) => {
     try {
-        const deletedMaid = await MaidInDelhi.findByIdAndDelete(req.params.id);
+        const deletedMaid = await MaidInGurugram.findByIdAndDelete(req.params.id);
         if (!deletedMaid) {
             return res.status(404).json({ message: "Maid not found" });
         }
@@ -79,10 +79,10 @@ const deleteDelhiMaid = async (req, res) => {
     }
 };
 
-// Get all MaidsInDelhi
-const getAllDelhiMaids = async (req, res) => {
+// Get all MaidsInGurugram
+const getAllGurugramMaids = async (req, res) => {
     try {
-        const maids = await MaidInDelhi.find();
+        const maids = await MaidInGurugram.find();
         res.status(200).json(maids);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -90,8 +90,8 @@ const getAllDelhiMaids = async (req, res) => {
 };
 
 module.exports = {
-    createDelhiMaid,
-    updateDelhiMaid,
-    deleteDelhiMaid,
-    getAllDelhiMaids,
+    createGurugramMaid,
+    updateGurugramMaid,
+    deleteGurugramMaid,
+    getAllGurugramMaids,
 };

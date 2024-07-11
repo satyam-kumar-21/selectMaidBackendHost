@@ -1,5 +1,5 @@
 const MaidInDelhi = require("../models/delhiMaids");
-const cloudinary = require("cloudinary").v2;
+const cloudinary = require("cloudinary");
 
 // Create a new MaidInDelhi
 const createDelhiMaid = async (req, res) => {

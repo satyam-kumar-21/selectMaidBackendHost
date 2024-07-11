@@ -1,5 +1,5 @@
 const Service = require("../models/serviceModel");
-const cloudinary = require("cloudinary").v2;
+const cloudinary = require("cloudinary");
 
 const createService = async (req, res) => {
     try {

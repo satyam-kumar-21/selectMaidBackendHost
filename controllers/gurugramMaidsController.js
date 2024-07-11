@@ -1,5 +1,5 @@
 const MaidInGurugram = require("../models/maidInGurugram");
-const cloudinary = require("cloudinary").v2;
+const cloudinary = require("cloudinary");
 
 // Create a new MaidInGurugram
 const createGurugramMaid = async (req, res) => {

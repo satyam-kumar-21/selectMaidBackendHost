@@ -1,5 +1,5 @@
 const Branch = require('../models/branchModel');
-const cloudinary = require('cloudinary').v2;
+const cloudinary = require('cloudinary');
 
 // Create a new branch
 const createBranch = async (req, res) => {

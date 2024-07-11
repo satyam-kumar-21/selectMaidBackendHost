@@ -14,11 +14,8 @@ const ratingRouter = require("./routes/ratingRoutes");
 const branchRouter = require("./routes/branchRoutes");
 const contactRoute = require('./routes/contactRoute');
 const delhiMaidRouter = require('./routes/delhiMaidsRoutes');
-const noidaMaidRouter = require('./routes/noidaMaidRoutes');
-const gurugramMaidRouter = require('./routes/gurugramMaidRoutes');
-// const delhiMaidRouter = require('./routes/delhiMaidsRoutes');
-// const noidaMaidRouter = require('./routes/noidaMaidRouter');
-// const gurugramMaidRouter = require('./routes/gurugramMaidRouter');
+// const noidaMaidRouter = require('./routes/noidaMaidRoutes');
+// const gurugramMaidRouter = require('./routes/gurugramMaidRoutes');
 // const blogRouter = require('./routes/blogRoutes');
 
 dotenv.config();
@@ -85,8 +82,8 @@ app.use("/branch", branchRouter);
 // app.use("/blog", blogRouter);
 app.use('/contact', contactRoute);
 app.use("/delhi-maids", delhiMaidRouter);
-app.use("/noida-maids",noidaMaidRouter);
-app.use("/gurugram-maids",gurugramMaidRouter);
+// app.use("/noida-maids",noidaMaidRouter);
+// app.use("/gurugram-maids",gurugramMaidRouter);
 
 // Predefined admin credentials
 const admin = {

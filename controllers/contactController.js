@@ -6,10 +6,9 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'satyamisha238@gmail.com', // Replace with your Gmail email
-    pass: 'Satyam@6203176139', // Replace with your Gmail password or app-specific password
+    pass: 'hwse avgq rcsc rqtu', // Replace with your Gmail password or app-specific password
   },
-  logger: true, // Enable detailed logging
-  debug: true,
+ 
 });
 
 const submitMessage = async (req, res) => {

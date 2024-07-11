@@ -8,6 +8,8 @@ const transporter = nodemailer.createTransport({
     user: 'satyamkumar2716@gmail.com', // Replace with your Gmail email
     pass: 'Satyam@2002', // Replace with your Gmail password or app-specific password
   },
+  logger: true, // Enable detailed logging
+  debug: true,
 });
 
 const submitMessage = async (req, res) => {

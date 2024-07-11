@@ -19,7 +19,7 @@ const submitMessage = async (req, res) => {
   // Create email content
   const mailOptions = {
     from: email,
-    to: `${EMAIL}, ${SELECT_MAID_EMAIL}`, // Include both recipients here
+    to: EMAIL, // Include both recipients here
     subject: 'New Message from Contact Form of selectmaid.in',
     html: `<p><strong>Name:</strong> ${name}</p>
            <p><strong>Email:</strong> ${email}</p>

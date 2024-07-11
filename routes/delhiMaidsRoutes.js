@@ -1,7 +1,7 @@
 const express = require("express");
 
 
-const upload = require("../middleware/fileUploadMulter.js");
+const upload = require("../middleware/fileUploadMulter");
 const { createDelhiMaid, updateDelhiMaid, deleteDelhiMaid, getAllDelhiMaids } = require("../controllers/delhiMaidController");
 
 const delhiMaidRouter = express.Router();

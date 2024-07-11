@@ -81,9 +81,9 @@ app.use("/rating", ratingRouter);
 app.use("/branch", branchRouter);
 // app.use("/blog", blogRouter);
 app.use('/contact', contactRoute);
-app.use("/delhi-maids", delhiMaidRouter);
-app.use("/noida-maids",noidaMaidRouter);
-app.use("/gurugram-maids",gurugramMaidRouter);
+// app.use("/delhi-maids", delhiMaidRouter);
+// app.use("/noida-maids",noidaMaidRouter);
+// app.use("/gurugram-maids",gurugramMaidRouter);
 
 // Predefined admin credentials
 const admin = {

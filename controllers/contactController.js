@@ -22,9 +22,10 @@ const submitMessage = async (req, res) => {
   const mailOptions = {
     from: email,
     to: EMAIL, // Include both recipients here
-    subject: `New Message from Contact Form of selectmaid.in!!!!! contact no. ${mobile}`,
+    subject: `New Message from Contact Form of selectmaid.in`,
     html: `<p><strong>Name:</strong> ${name}</p>
            <p><strong>Email:</strong> ${email}</p>
+           <p><strong>Contact No.:</strong> ${mobile}</p>
            <p><strong>Message:</strong> ${message}</p>`,
   };
 

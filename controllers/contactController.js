@@ -16,13 +16,13 @@ const transporter = nodemailer.createTransport({
 });
 
 const submitMessage = async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, message, mobile } = req.body;
 
   // Create email content
   const mailOptions = {
     from: email,
     to: EMAIL, // Include both recipients here
-    subject: 'New Message from Contact Form of selectmaid.in',
+    subject: `New Message from Contact Form of selectmaid.in!!!!! contact no. ${mobile}`,
     html: `<p><strong>Name:</strong> ${name}</p>
            <p><strong>Email:</strong> ${email}</p>
            <p><strong>Message:</strong> ${message}</p>`,

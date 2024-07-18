@@ -19,14 +19,16 @@ const submitMessage = async (req, res) => {
 
   // Create email content
   const mailOptions = {
-    from: email, 
-    to: `${EMAIL}`, // Your email(s)
+    from: EMAIL,
+    to: `${EMAIL}`,
+    replyTo: email, // This ensures replies go to the customer's email
     subject: `New Message from Contact form of selectmaid.in`,
     html: `<p><strong>Name:</strong> ${name}</p>
            <p><strong>Email:</strong> ${email}</p>
            <p><strong>Contact No.:</strong> ${mobile}</p>
            <p><strong>Message:</strong> ${message}</p>`,
   };
+  
 
   console.log(mailOptions);
 
